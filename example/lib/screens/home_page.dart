@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:password_validation_plus/password_validation_plus.dart';
@@ -28,29 +25,30 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           SizedBox(
             width: size.width,
-            height: size.height*0.01,
+            height: size.height * 0.01,
           ),
           SizedBox(
-            width: size.width*0.9,
+            width: size.width * 0.9,
             child: Text(
               'Set a Password',
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  fontWeight: FontWeight.w600
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontWeight: FontWeight.w600),
             ),
           ),
           SizedBox(
-            height: size.height*0.02,
+            height: size.height * 0.02,
           ),
           SizedBox(
-            width: size.width*0.9,
+            width: size.width * 0.9,
             child: Text(
               'Please create a secure password including the following criteria below',
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           SizedBox(
-            height: size.height*0.02,
+            height: size.height * 0.02,
           ),
           PasswordTextField(
             hint: 'Password',
@@ -58,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             setState: setState,
           ),
           SizedBox(
-            height: size.height*0.005,
+            height: size.height * 0.005,
           ),
           PasswordValidationPlus(
             textController: controller,

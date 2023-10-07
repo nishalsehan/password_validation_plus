@@ -1,4 +1,3 @@
-import 'package:example/widgets/password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,10 +17,9 @@ class MyApp extends StatelessWidget {
       title: 'Password Validation',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        textTheme: GoogleFonts.signikaTextTheme()
-      ),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+          textTheme: GoogleFonts.signikaTextTheme()),
       home: const MyHomePage(title: 'Create Your Password'),
     );
   }
