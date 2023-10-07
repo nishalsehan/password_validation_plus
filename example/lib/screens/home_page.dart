@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
             setState: setState,
           ),
           SizedBox(
-            height: size.height*0.02,
+            height: size.height*0.005,
           ),
           PasswordValidationPlus(
             textController: controller,
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
             successIcon: Iconsax.tick_circle,
             unSuccessIcon: Iconsax.close_circle,
             textSize: 16,
-          )
+          ),
         ],
       ),
     );

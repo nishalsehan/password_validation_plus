@@ -11,7 +11,8 @@ class PasswordValidationPlus extends StatefulWidget{
   final Widget? successWidget;
   final Widget? unSuccessWidget;
   final double textSize;
-  const PasswordValidationPlus({super.key, required this.textController, this.maxLength, this.minLength = 8, this.successIcon, this.unSuccessIcon, this.successWidget, this.unSuccessWidget, this.textSize = 14});
+  final bool hideRules;
+  const PasswordValidationPlus({super.key, required this.textController, this.maxLength, this.minLength = 8, this.successIcon, this.unSuccessIcon, this.successWidget, this.unSuccessWidget, this.textSize = 14, this.hideRules = false});
 
   @override
   State<PasswordValidationPlus> createState() => PasswordValidationPlusState();
@@ -45,16 +46,20 @@ class PasswordValidationPlusState extends State<PasswordValidationPlus>{
             color: _strength <= 0.2 ? Colors.red : _strength == 0.4 ? Colors.yellow : _strength == 0.6000000000000001 ? Colors.amber :_strength == 0.8 ? Colors.orange : Colors.green,
             minHeight: 5,
           ),
-          SizedBox(height: size.height*0.015),
-          conditionText(checkLength(), widget.maxLength != null?'Contain between ${widget.minLength}-${widget.maxLength} Characters':'Contain at least ${widget.minLength} Characters'),
-          SizedBox(height: size.height*0.005),
-          conditionText(capitalReg.hasMatch(widget.textController.text), "At least one CAPITAL letter"),
-          SizedBox(height: size.height*0.005),
-          conditionText(simpleReg.hasMatch(widget.textController.text), "At least one simple letter"),
-          SizedBox(height: size.height*0.005),
-          conditionText(numReg.hasMatch(widget.textController.text), "At least one number"),
-          SizedBox(height: size.height*0.005),
-          conditionText(symbolsReg.hasMatch(widget.textController.text), "At least one special character"),
+          if(!widget.hideRules)Column(
+            children: [
+              SizedBox(height: size.height*0.015),
+              conditionText(checkLength(), widget.maxLength != null?'Contain between ${widget.minLength}-${widget.maxLength} Characters':'Contain at least ${widget.minLength} Characters'),
+              SizedBox(height: size.height*0.005),
+              conditionText(capitalReg.hasMatch(widget.textController.text), "At least one CAPITAL letter"),
+              SizedBox(height: size.height*0.005),
+              conditionText(simpleReg.hasMatch(widget.textController.text), "At least one simple letter"),
+              SizedBox(height: size.height*0.005),
+              conditionText(numReg.hasMatch(widget.textController.text), "At least one number"),
+              SizedBox(height: size.height*0.005),
+              conditionText(symbolsReg.hasMatch(widget.textController.text), "At least one special character"),
+            ],
+          )
         ],
       ),
     );

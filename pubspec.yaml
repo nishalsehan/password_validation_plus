@@ -1,7 +1,7 @@
 name: password_validation_plus
 description: This plugin provides password validation with the progress and validation rules
 version: 0.0.1
-homepage:
+homepage: https://github.com/nishalsehan/password_validation_plus
 
 environment:
   sdk: '>=3.1.3 <4.0.0'
