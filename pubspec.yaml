@@ -1,5 +1,5 @@
 name: password_validation_plus
-description: This plugin provides password validation with the progress and validation rules
+description: This Flutter plugin offers a password validation widget to ensure strong password requirements in your Flutter applications.
 version: 0.0.1
 homepage: https://github.com/nishalsehan/password_validation_plus
 
